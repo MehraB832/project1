@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
-// import { create } from "./src/create_sql";
-const port = 1155;
+import { publicPort } from "./src/config";
+
+const port = publicPort;
 
 const app: Express = express();
 
@@ -9,8 +10,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/hi", (req: Request, res: Response) => {
-  res.send("BYEEE!!");
-  // create()
+  res.send('<center><h5>some html</h5></center>');
 });
 
 app.listen(port, () => {
